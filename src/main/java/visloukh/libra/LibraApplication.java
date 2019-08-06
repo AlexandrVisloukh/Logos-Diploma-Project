@@ -43,29 +43,28 @@ public class LibraApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-      // bookService.createDefaultChapters();
-//        roleService.createDefaultRoles();
-////        List<RoleEntity> roles = new ArrayList<>();
-////        roles = roleService.findAllRoles();
-////        for (RoleEntity role : roles) {
-////            System.out.println(role.toString());
-////        }
-//        userService.createDefaultUsers();
-//
-//        categoryService.createDefaultCategorys();
-//
-      //  bookService.createDefaultBooks();
-//
-//     userDetailsService.createDefaultUserDetails();
+        if (roleService.findAllRoles().isEmpty()) {
+            roleService.createDefaultRoles();
+            userService.createDefaultUsers();
+            categoryService.createDefaultCategorys();
+            bookService.createDefaultBooks();
+            bookService.createDefaultChapters();
+            userDetailsService.createDefaultUserDetails();
+        }
 
-        //userAdmin=userService.findUserById(1).;
-        //System.out.println(userAdmin.toString());
+//        List<RoleEntity> roles = new ArrayList<>();
+//        roles = roleService.findAllRoles();
+//        for (RoleEntity role : roles) {
+//            System.out.println(role.toString());
+//        }
+//        userAdmin=userService.findUserById(1).;
+//        System.out.println(userAdmin.toString());
 //        List<UserEntity> users = new ArrayList<>();
 //        users= userService.findAllUser();
 //        for (UserEntity user : users) {
 //            System.out.println(user.toString());
 //        }
-       // List<UserEntity> users = new ArrayList<>();
+//        List<UserEntity> users = new ArrayList<>();
 //        users= userService.findAllUser();
 //        for (UserEntity user: users) {
 //            System.out.println(user);
